@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shetland Animal Welfare — Coming soon</title>
+    <meta name="description" content="A new charity shop is on its way. Shetland Animal Welfare, Toll Clock Shopping Centre, 26 North Road, Lerwick, Shetland, ZE1 0NQ.">
+    <meta name="theme-color" content="#6ec8be">
+    <link rel="canonical" href="https://shetlandanimalwelfare.co.uk/">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <meta property="og:title" content="Shetland Animal Welfare">
+    <meta property="og:description" content="A new charity shop is on its way.">
+    <meta property="og:image" content="assets/logo.png?v=2">
+    <meta property="og:url" content="https://shetlandanimalwelfare.co.uk/">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal: #6ec8be;
+            --teal-deep: #2f7f78;
+            --ink: #1a2c31;
+            --muted: #53656b;
+            --paper: #f7f3eb;
+            --white: #fffcf7;
+            --sky: #d5eef4;
+            --ring: rgba(110, 200, 190, 0.45);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            min-height: 100%;
+        }
+
+        body {
+            font-family: Outfit, "Avenir Next", "Segoe UI", sans-serif;
+            color: var(--ink);
+            background: var(--sky);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .sky {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% 108%, rgba(47, 127, 120, 0.22), transparent 55%),
+                radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.95), transparent 28%),
+                radial-gradient(circle at 78% 12%, rgba(255, 255, 255, 0.8), transparent 26%),
+                radial-gradient(circle at 88% 38%, rgba(255, 255, 255, 0.55), transparent 22%),
+                linear-gradient(180deg, #b9dff0 0%, #d7eef4 38%, #eef6f1 72%, #f4efe4 100%);
+        }
+
+        .cloud {
+            position: fixed;
+            z-index: 1;
+            pointer-events: none;
+            background: rgba(255, 255, 255, 0.55);
+            filter: blur(2px);
+            border-radius: 999px;
+        }
+
+        .cloud-a {
+            width: 280px;
+            height: 70px;
+            top: 8%;
+            left: -40px;
+            box-shadow: 70px 18px 0 12px rgba(255, 255, 255, 0.4);
+        }
+
+        .cloud-b {
+            width: 360px;
+            height: 80px;
+            top: 14%;
+            right: -80px;
+            box-shadow: -90px 22px 0 8px rgba(255, 255, 255, 0.35);
+        }
+
+        .page {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem 1.25rem 7rem;
+        }
+
+        main {
+            width: min(720px, 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.6rem;
+            padding: 0.42rem 0.9rem 0.42rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(47, 127, 120, 0.18);
+            color: var(--teal-deep);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            backdrop-filter: blur(8px);
+        }
+
+        .dot {
+            width: 0.48rem;
+            height: 0.48rem;
+            border-radius: 50%;
+            background: var(--teal-deep);
+            box-shadow: 0 0 0 0 var(--ring);
+            animation: pulse 2s ease-out infinite;
+        }
+
+        .logo-wrap {
+            margin: 0 auto 1.85rem;
+            width: min(560px, 100%);
+        }
+
+        .logo {
+            display: block;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 18px 28px rgba(26, 44, 49, 0.18));
+        }
+
+        h1 {
+            font-family: Outfit, "Avenir Next", sans-serif;
+            font-weight: 600;
+            font-size: clamp(1.15rem, 2.4vw, 1.35rem);
+            letter-spacing: -0.01em;
+            color: var(--ink);
+        }
+
+        .lede {
+            margin: 0.45rem auto 0;
+            max-width: 36ch;
+            color: var(--muted);
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+            line-height: 1.5;
+        }
+
+        footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 2rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        footer p {
+            width: 100%;
+        }
+
+        footer a {
+            color: var(--ink);
+            text-decoration: none;
+            font-weight: 600;
+            overflow-wrap: anywhere;
+        }
+
+        footer a:hover,
+        footer a:focus-visible {
+            color: var(--teal-deep);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .sea {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            height: 110px;
+            overflow: hidden;
+            pointer-events: none;
+            background:
+                radial-gradient(120% 80% at 10% 100%, rgba(47, 127, 120, 0.35), transparent 50%),
+                radial-gradient(100% 90% at 80% 120%, rgba(110, 200, 190, 0.45), transparent 52%),
+                linear-gradient(180deg, transparent, rgba(47, 127, 120, 0.22));
+        }
+
+        .wave {
+            position: absolute;
+            left: -30%;
+            width: 160%;
+            height: 70px;
+            bottom: -8px;
+            fill: rgba(47, 127, 120, 0.22);
+        }
+
+        .wave.back {
+            bottom: 10px;
+            opacity: 0.5;
+            animation: drift 2.4s ease-in-out infinite;
+        }
+
+        .wave.front {
+            fill: rgba(31, 90, 86, 0.28);
+            animation: drift 1.8s ease-in-out infinite reverse;
+        }
+
+        @keyframes pulse {
+            70% {
+                box-shadow: 0 0 0 10px transparent;
+            }
+            100% {
+                box-shadow: 0 0 0 0 transparent;
+            }
+        }
+
+        @keyframes drift {
+            50% {
+                transform: translateX(-8%);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .dot,
+            .wave.back,
+            .wave.front {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sky" aria-hidden="true"></div>
+    <div class="cloud cloud-a" aria-hidden="true"></div>
+    <div class="cloud cloud-b" aria-hidden="true"></div>
+
+    <div class="page">
+        <main>
+            <p class="badge"><span class="dot" aria-hidden="true"></span> Coming soon</p>
+
+            <div class="logo-wrap">
+                <img class="logo" src="assets/logo.png?v=2" width="1200" height="834" alt="Shetland Animal Welfare — for the love of our fellow creatures">
+            </div>
+
+            <h1>Shetland Animal Welfare</h1>
+            <p class="lede">A new charity shop is on its way.</p>
+
+            <footer>
+                <p>Toll Clock Shopping Centre, 26 North Road, Lerwick, Shetland, ZE1 0NQ</p>
+                <p><a href="mailto:info@shetlandanimalwelfare.co.uk">info@shetlandanimalwelfare.co.uk</a></p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="sea" aria-hidden="true">
+        <svg class="wave back" viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0 40c120 22 240-22 360-18s240 40 360 28 240-40 360-22 240 38 360 18v34H0Z"></path>
+        </svg>
+        <svg class="wave front" viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0 48c140 18 220-24 360-16s260 36 400 20 240-36 360-16 220 28 320 12v32H0Z"></path>
+        </svg>
+    </div>
+</body>
+</html>

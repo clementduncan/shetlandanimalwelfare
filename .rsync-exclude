@@ -1,0 +1,22 @@
+# .rsync-exclude
+# Paths are relative to the source dir:
+# ${local_saw}/
+
+# OS/editor metadata
+.DS_Store
+.vscode/
+.cursor/
+*.codekit3
+
+# VCS files
+.git/
+/.gitignore
+/.rsync-exclude
+/README.md
+
+# Local logs/temp
+*.log
+
+# Local environment/secrets
+.env
+.env.*
